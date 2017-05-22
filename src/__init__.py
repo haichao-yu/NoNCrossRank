@@ -1,13 +1,8 @@
 import scipy.io as sio
+import numpy as np
+from scipy import sparse
 
-import AUCEvaluation
+import CR_CrossValidation
 
-# print sio.whosmat("../data/CRResults.mat")
-data = sio.loadmat("../data/CRResults.mat")
 
-ExpandSeeds = data['ExpandSeeds']
-RankScoreRecord = data['RankScoreRecord']
-RankRecord = data['RankRecord']
-AllGeneID = data['AllGeneID']
-
-AUCEvaluation.auc_evaluation(RankRecord, ExpandSeeds, AllGeneID)
+CR_CrossValidation.cr_cross_validation()
