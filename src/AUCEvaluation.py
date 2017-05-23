@@ -14,7 +14,7 @@ def auc_evaluation(RankRecord, ExpandSeeds, AllGeneID):
 
         for k in range(len(RankRecord[0, 0])):
 
-            real_now = AllGeneID[RankRecord[0, j][k, 0] - 1]  # ID of gene at rank k
+            real_now = AllGeneID[RankRecord[0, j][k, 0]]  # ID of gene at rank k
 
             if real_now == ExpandSeeds[j]:
                 topn[k, j] = 1

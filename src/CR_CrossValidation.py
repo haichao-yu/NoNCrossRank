@@ -73,8 +73,6 @@ def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6):
 
         for t in range(A_Seeds[0, j].shape[0]):
 
-            TotalCounter += 1
-
             # initialize query vector
             e = np.array([])
 
@@ -135,6 +133,8 @@ def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6):
             RankRecord[0, TotalCounter] = IX
 
             print("Finished Number of Folds/Total Number of Folds: " + str(TotalCounter) + "/" + str(ExpandSeeds.shape[0]))
+
+            TotalCounter += 1
 
     '''
     Save results

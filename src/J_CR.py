@@ -1,5 +1,6 @@
 from scipy import sparse
 
+
 def j_cr(Anorm, Ynorm, I_n, r, e, alpha, c):
     """
     Cross Rank objective function value
