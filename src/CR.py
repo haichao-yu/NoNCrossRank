@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.sparse.linalg import norm
 import J_CR
 
 
@@ -36,6 +37,7 @@ def cr(Anorm, Ynorm, I_n, e, alpha, c, MaxIter, epsilon):
     J1 = J_CR.j_cr(Anorm, Ynorm, I_n, r, e, alpha, c)  # objective value measure
     # J1 = r  # ranking vector norm measure
     J1 = (round(J1 * 1e16)) / 1e16
+    # J1 = (np.around(J1 * 1e16)) / 1e16
     delta = 99999
     Objs = []
     Deltas = []
@@ -54,11 +56,12 @@ def cr(Anorm, Ynorm, I_n, e, alpha, c, MaxIter, epsilon):
         J1 = J_CR.j_cr(Anorm, Ynorm, I_n, r, e, alpha, c)  # objective value measure
         # J1 = r  # ranking vector norm measure
         J1 = (round(J1 * 1e16)) / 1e16
+        # J1 = (np.around(J1 * 1e16)) / 1e16
         delta = J2 - J1  # objective value measure
-        # delta = np.linalg.norm([J2 - J1], 1)  # ranking vector norm measure
+        # delta = norm(J2 - J1, ord=1)  # ranking vector norm measure
 
         Objs = np.hstack((Objs, J1))  # objective value measure
-        # Objs = np.hstack((Objs, np.linalg.norm([J1], 1)))  # ranking vector norm measure
+        # Objs = np.hstack((Objs, norm(J1, ord=1)))  # ranking vector norm measure
         Deltas = np.hstack((Deltas, delta))
 
         Iter += 1
