@@ -1,6 +1,6 @@
-# CrossRank
+# NoNCrossRank
 
-This is an implementation of CrossRank algorithm with Python.
+This is an implementation of NoNCrossRank algorithm with Python.
 
 The goal of this algorithm is to solve:<br/>
 **Given:** (1) an Network of Networks (NoN) R = <G, A, &theta;>, and (2) the query vectors e<sub>i</sub> (i = 1, ..., g);</br>
