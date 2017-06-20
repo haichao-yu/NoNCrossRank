@@ -10,7 +10,7 @@ The goal of this algorithm is to solve:<br/>
 
 ## Functions
 
-* **__init__.py:** program entry;
+* **\_\_init\_\_.py:** program entry;
 * **CR_CrossValidation.py:** cross rank cross validation;
 * **CR_Precomputation.py:** precompute the Anorm and Ynorm;
 * **CR.py:** ranking process;
