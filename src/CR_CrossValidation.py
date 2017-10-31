@@ -6,7 +6,7 @@ import CR
 import AUCEvaluation
 
 
-def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6):
+def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6, dataset="../data/P_G_NoN.npy"):
     """
     Cross Rank leave-one-out cross validation on tissue-specific PPI networks.
 
@@ -21,7 +21,7 @@ def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6):
     '''
     Load NoN data
     '''
-    data = np.load("../data/P_G_NoN.npy").item()
+    data = np.load(dataset).item()
     PhenotypeSimNet = data['PhenotypeSimNet']
     PhenotypeID = data['PhenotypeID']
     AllGeneID = data['AllGeneID']
@@ -132,7 +132,7 @@ def cr_cross_validation(alpha=0.5, c=0.85, MaxIter=1000, epsilon=1e-6):
 
             RankRecord[0, TotalCounter] = IX
 
-            print("Finished Number of Folds/Total Number of Folds: " + str(TotalCounter) + "/" + str(ExpandSeeds.shape[0]))
+            print("Finished Number of Folds/Total Number of Folds: " + str(TotalCounter + 1) + "/" + str(ExpandSeeds.shape[0]))
 
             TotalCounter += 1
 

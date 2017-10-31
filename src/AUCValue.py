@@ -3,7 +3,7 @@ import numpy as np
 
 def auc_value(Rank, n):
     """
-    Compute AUC value with n false positives
+    Compute AUC (Area Under the Curve) value with n false positives
     """
 
     '''
